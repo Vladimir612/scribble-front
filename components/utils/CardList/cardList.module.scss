@@ -1,0 +1,16 @@
+@import "../../../styles/mixins.scss";
+
+.card-list {
+  @include box-center($justify: flex-start);
+  gap: 2rem;
+  margin: 3rem 0;
+  li{
+    @include box-center();
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card-list{
+    justify-content: center;
+  }
+}

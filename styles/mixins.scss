@@ -1,0 +1,39 @@
+//colors
+$dark-blue: #171941;
+$darker-blue: #0a0b2c;
+$pink: #ff5292;
+$white: #fcf8ff;
+$blue: #4D6CFA;
+
+$gradient: linear-gradient(
+  55.7deg,
+  rgba(77, 108, 250, 0.15) -4.49%,
+  rgba(255, 82, 146, 0.15) 114.31%
+);
+
+$gradient-border: linear-gradient(
+  45deg,
+  rgba(77, 108, 250, 0.7) 0%,
+  rgba(255, 82, 146, 0.7) 100%
+);
+
+//mixins
+@mixin box-center($align: center, $direction: row, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin fit-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin contain-image {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}

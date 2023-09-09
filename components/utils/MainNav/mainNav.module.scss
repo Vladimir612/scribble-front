@@ -1,0 +1,185 @@
+@import "../../../styles/mixins.scss";
+
+.main-nav,
+.links,
+.pages,
+.login-registration {
+  @include box-center;
+}
+
+.main-nav {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  gap: 2.5rem;
+  background: $dark-blue;
+  z-index: 20;
+  .arrow{
+    @include box-center();
+    transition: all ease-in-out 0.15s;
+  }
+  .profileImg{
+    width: 2rem; 
+    height: 2rem; 
+    position: relative;
+    border: 2px solid $white;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    img{
+        object-fit: cover!important;
+    }
+  }
+  .initials{
+    width: 2rem; 
+    height: 2rem;
+    border: 2px solid $white;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    background: $gradient-border;
+    @include box-center();
+    span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $white;
+    }
+  }
+  .profile{
+    position: relative;
+    .logout{
+      position: absolute;
+      bottom: -9.5rem;
+      right: 0.4rem;
+      background: linear-gradient(
+        45deg,
+        rgb(99, 128, 255) 0%,
+        rgba(255, 103, 159, 0.95) 100%
+      );;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border-top-right-radius: 0;
+      @include box-center($direction: column);
+      gap: 1.5rem;
+      button {
+        background: $pink;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all ease-in-out 0.15s;
+        width: 10rem;
+        padding: 0.5rem 0;
+        border-radius: 0.5rem;
+        &:hover {
+          transform: scale(1.05);
+        }
+        &:nth-child(2) {
+          border: 2px solid $pink;
+          background: none;
+        }
+      }
+    }
+    .iconGroup{
+      @include box-center();
+      gap: 0.5rem;
+      cursor: pointer;
+      background: none;
+      padding: initial;
+      outline: none;
+      border: none;
+      transition: all ease-in-out 0.15s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .links {
+    width: 100%;
+    justify-content: space-between;
+    a {
+      font-size: 1.1rem;
+    }
+    * {
+      color: #fff;
+    }
+    .pages {
+      gap: 2.5rem;
+    }
+  }
+  .login-registration {
+    gap: 2.5rem;
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all ease-in-out 0.15s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:nth-child(1) {
+        border: 2px solid $pink;
+        padding: 0.2rem 1.2rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  .hamburger-menu {
+    @include box-center($direction: column, $justify: space-between);
+    display: none;
+    z-index: 100;
+    height: 1rem;
+    cursor: pointer;
+    background: initial;
+    padding: initial;
+    &:hover,
+    &:active {
+      transform: initial;
+    }
+    .line {
+      width: 1.8rem;
+      height: 0.2rem;
+      border-radius: 0.2rem;
+      background-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .main-nav {
+    .profile{
+      .logout{
+        bottom: -10rem;
+        right: -4rem;
+        border-top-right-radius: 0.75rem;
+      }
+    }
+    .hamburger-menu {
+      display: flex;
+    }
+    .links {
+      height: 18rem;
+      position: absolute;
+      top: -18rem;
+      
+      box-shadow: 0 6px 6px transparentize($darker-blue, 0.5);
+      left: 0;
+      background: $dark-blue;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: all ease-in-out 0.2s;
+      .pages {
+        gap: 1.5rem;
+        flex-direction: column;
+      }
+      &.active {
+        top: 0;
+      }
+    }
+  }
+}

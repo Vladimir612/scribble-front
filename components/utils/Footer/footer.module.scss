@@ -1,0 +1,25 @@
+@import "../../../styles/mixins.scss";
+
+.main-footer {
+  background: $dark-blue;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  .bottom {
+    @include box-center($justify: space-between);
+  }
+  * {
+    color: #fcf8ffb2;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main-footer {
+    .bottom {
+      flex-direction: column;
+      gap: 1rem;
+      * {
+        text-align: center;
+      }
+    }
+  }
+}

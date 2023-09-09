@@ -1,0 +1,11 @@
+.imgWrapper {
+  position: relative;
+  img {
+    object-fit: contain;
+  }
+  &.r {
+    img {
+      object-position: right;
+    }
+  }
+}

@@ -1,0 +1,150 @@
+@import "../../../../styles/mixins.scss";
+
+.infoBanner{
+    background: $dark-blue;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .profileImgWrapper{
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        &:hover{
+            .uploadPhoto{
+                top: 0;
+            }
+        }
+        .uploadPhoto {
+            background: #0a0b2cd5;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            @include box-center();
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            border: 0;
+            outline: 0;
+        }
+    }
+    .initials{
+        width: 8rem; 
+        height: 8rem;
+        border: 2px solid $white;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: $gradient-border;
+        @include box-center();
+        span {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: $white;
+        }
+    }
+    .info{
+        @include box-center($justify: flex-start);
+        gap: 2rem;
+        h4 {
+            color: $white;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        .flexRow{
+            @include box-center();
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+        }
+    }
+    .profileImg{
+        width: 8rem; 
+        height: 8rem; 
+        position: relative;
+        border: 2px solid $white;
+        border-radius: 1rem;
+        overflow: hidden;
+        img{
+            object-fit: cover!important;
+        }
+    }
+}
+
+.modalBg{
+    width: 100%;
+    height: calc(100% + 4rem);
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #0913d045;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    .modal{
+        position: absolute;
+        z-index: 50;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        padding: 2rem 4rem;
+        background: $white;
+        border: 2px solid $pink;
+        @include box-center($direction: column);
+        gap: 2rem;
+        p{
+            color: $dark-blue;
+        }
+        .close{
+            border: none;
+            outline: none;
+            background: none;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            cursor: pointer;
+        }
+        .btnsWrapper{
+            @include box-center();
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        form{
+            @include box-center($direction: column);
+            label{
+                background: $blue;
+                color: $white;
+                border-radius: 0.5rem;
+                padding: 0.5rem 2rem;
+                cursor: pointer;
+            }
+        }
+    }
+    .profileImg{
+        width: 6rem; 
+        height: 6rem; 
+        position: relative;
+        border: 2px solid $blue;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-top: 1rem;
+        img{
+            object-fit: cover!important;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .infoBanner{
+        .info{
+            justify-content: center;
+            gap: 5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .infoBanner{
+        .info{
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}

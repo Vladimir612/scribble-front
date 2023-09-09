@@ -1,0 +1,181 @@
+@import "../../../styles/mixins.scss";
+
+.input-group {
+  width: 100%;
+  label {
+    font-weight: 600;
+    color: $dark-blue;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  input,
+  textarea {
+    width: 100%;
+    outline: none;
+    padding: 0.4rem 0.6rem;
+    border: 2px solid $pink;
+    border-radius: 0.5rem;
+    color: $dark-blue;
+    &::placeholder {
+      color: transparentize($color: $dark-blue, $amount: 0.4);
+    }
+  }
+  input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      background: none;
+      -webkit-text-fill-color: $dark-blue;
+      box-shadow: 0 0 0px 1000px #fff inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+  textarea {
+    min-height: 8rem;
+    resize: none;
+  }
+}
+
+.question-form,
+.register-form {
+  width: 30rem;
+  max-width: 100%;
+  @include box-center($direction: column);
+  gap: 1rem;
+}
+
+.register-form {
+  position: relative;
+  background: $dark-blue;
+  padding: 1rem 2rem 0.5rem 2rem;
+  margin: 4rem 0;
+  * {
+    z-index: 3;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.2rem;
+    left: -0.2rem;
+    height: calc(100% + 0.4rem);
+    width: calc(100% + 0.4rem);
+    border-radius: calc(0.5rem + 2px);
+    background: $gradient-border;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    background: $dark-blue;
+    z-index: 2;
+  }
+}
+
+.register-page {
+  @include box-center;
+  min-height: calc(100vh - 4rem);
+  margin-top: 4rem;
+  background: $dark-blue;
+  position: relative;
+  overflow: hidden;
+  h2 {
+    color: $white;
+    font-size: 1.8rem;
+  }
+  p {
+    color: $white;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .input-group {
+    label {
+      color: $white;
+    }
+  }
+
+  //images
+
+  .img-wrapper-h-1 {
+    width: 25rem;
+    height: 100%;
+    position: absolute;
+    top: -16rem;
+    left: 0;
+  }
+  .img-wrapper-h-2 {
+    width: 75rem;
+    height: 160%;
+    position: absolute;
+    top: -15rem;
+    right: -20rem;
+  }
+}
+
+.error-msg {
+  color: $pink !important;
+  margin: 0 !important;
+  text-align: center;
+}
+
+.forgot-password{
+  margin-top: 0.7rem;
+  a{
+    color: $pink;
+  }
+}
+.par-login{
+  font-size: 1rem;
+ margin-bottom: 0.7rem;
+  a{
+    color: $pink;
+  }
+}
+
+.success-msg {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .register-page {
+    .img-wrapper-h-1 {
+      height: 60%;
+      width: 10rem;
+      top: -4rem;
+    }
+    .img-wrapper-h-2 {
+      width: 50rem;
+      height: 100%;
+      top: initial;
+      bottom: -10rem;
+      right: -15rem;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .register-page {
+    .img-wrapper-1 {
+      width: 80%;
+      height: 18rem;
+      img {
+        object-position: center;
+      }
+    }
+    .img-wrapper-h-2 {
+      width: 35rem;
+      height: 80%;
+      top: initial;
+      bottom: -10rem;
+      right: -15rem;
+    }
+  }
+}

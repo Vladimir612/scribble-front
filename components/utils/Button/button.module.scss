@@ -1,0 +1,29 @@
+@import "../../../styles/mixins.scss";
+
+.btn {
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  padding: 0.5rem 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &.pink {
+    background: $pink;
+    box-shadow: -8px 12px 25px rgba(255, 82, 146, 0.16);
+    color: $white;
+  }
+  &.disabled {
+    background: #b8b8b8;
+    cursor: initial;
+    pointer-events: none;
+  }
+  &.blue {
+    background: $blue;
+    box-shadow: -8px 12px 25px 0px rgba(77, 108, 250, 0.15);
+    color: $white;
+  }
+}

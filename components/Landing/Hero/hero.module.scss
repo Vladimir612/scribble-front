@@ -1,0 +1,102 @@
+@import "../../../styles/mixins.scss";
+
+.hero {
+  @include box-center($justify: space-between);
+  gap: 2rem;
+  min-height: calc(100vh - 4rem);
+  margin-top: 4rem;
+  overflow: hidden;
+  background: $dark-blue;
+  position: relative;
+  .text {
+    width: 40%;
+    color: $white;
+    z-index: 10;
+    p {
+      margin: 1.5rem 0;
+    }
+    h1 {
+      font-size: 3.7rem;
+      line-height: 1;
+    }
+  }
+  .img-wrapper-1 {
+    width: 60%;
+    height: 30rem;
+    z-index: 10;
+    img {
+      object-position: right;
+    }
+  }
+  .img-wrapper-h-1 {
+    width: 25rem;
+    height: 100%;
+    position: absolute;
+    top: -16rem;
+    left: 0;
+  }
+  .img-wrapper-h-2 {
+    width: 75rem;
+    height: 160%;
+    position: absolute;
+    top: -15rem;
+    right: -20rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    .img-wrapper-h-1 {
+      height: 60%;
+      width: 10rem;
+      top: -4rem;
+    }
+    .img-wrapper-h-2 {
+      width: 50rem;
+      height: 100%;
+      top: initial;
+      bottom: -10rem;
+      right: -15rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    gap: 4rem;
+    .text {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    .text {
+      width: 100%;
+      @include box-center($direction: column);
+      * {
+        text-align: center;
+      }
+    }
+    .img-wrapper-1 {
+      width: 80%;
+      height: 18rem;
+      img {
+        object-position: center;
+      }
+    }
+    .img-wrapper-h-2 {
+      width: 35rem;
+      height: 80%;
+      top: initial;
+      bottom: -10rem;
+      right: -15rem;
+    }
+  }
+}

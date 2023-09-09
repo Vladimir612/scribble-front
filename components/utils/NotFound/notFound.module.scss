@@ -1,0 +1,124 @@
+@import "../../../styles/mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+.notFoundScreen {
+  background: $dark-blue;
+  height: 100vh;
+  @include box-center($direction: column);
+  gap: 2rem;
+  .numbers404 {
+    max-width: 100%;
+    @include box-center;
+    height: 7.2rem;
+  }
+  * {
+    color: #fff;
+  }
+  .four {
+    font-size: 10rem;
+    font-family: "Lilita One", cursive;
+    font-weight: 600;
+  }
+  .text {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .eyelid {
+    width: 7.2rem;
+    height: 7.2rem;
+    overflow: hidden;
+    position: relative;
+    animation: eyelid 6s cubic-bezier(0.37, 0.88, 0.63, 1) 0s infinite normal
+      both;
+    margin-right: 0.3rem;
+  }
+  .zero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7.2rem;
+    height: 7.2rem;
+    background: #fff;
+    border-radius: 7rem;
+    position: relative;
+  }
+  .pupil {
+    position: absolute;
+    background: darken($dark-blue, 11);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pupil 6s cubic-bezier(0.37, 0.88, 0.63, 1) 0s infinite normal
+      both;
+  }
+}
+
+@keyframes pupil {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  15% {
+    top: 65%;
+    left: 30%;
+  }
+  30% {
+    top: 65%;
+    left: 70%;
+  }
+  45% {
+    top: 50%;
+    left: 25%;
+  }
+  60% {
+    top: 50%;
+    left: 75%;
+  }
+  75% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@keyframes eyelid {
+  0% {
+    height: 7.2rem;
+  }
+  15% {
+    height: 7.2rem;
+  }
+  30% {
+    height: 7.2rem;
+  }
+  45% {
+    height: 5.2rem;
+  }
+  60% {
+    height: 5.2rem;
+  }
+  68% {
+    height: 7.2rem;
+  }
+  75% {
+    height: 7.2rem;
+  }
+  79% {
+    height: 0;
+  }
+  83% {
+    height: 7.2rem;
+  }
+  100% {
+    height: 7.2rem;
+  }
+}

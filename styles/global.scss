@@ -1,0 +1,72 @@
+@import "./mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding-global {
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+.col-pink {
+  color: $pink;
+}
+
+.bg-pink {
+  background: $pink;
+}
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+  z-index: 2000;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  z-index: 2000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparentize($color: $pink, $amount: 0.6);
+  border-radius: 10px;
+  z-index: 2000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($pink, 20);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (max-width: 1200px) {
+  .padding-global {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .padding-global {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

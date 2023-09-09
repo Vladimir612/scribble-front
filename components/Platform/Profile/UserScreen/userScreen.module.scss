@@ -1,0 +1,11 @@
+@import "../../../../styles/mixins.scss";
+
+.userScreen{
+    margin-top: 4rem;
+    .title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 2.5rem;
+    }
+}

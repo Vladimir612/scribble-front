@@ -1,0 +1,118 @@
+@import "../../../styles/mixins.scss";
+
+.banner {
+  position: relative;
+  margin-top: 4rem;
+  background: $dark-blue;
+  padding-bottom: 3rem;
+  .text-wrapper {
+    position: relative;
+  }
+  .type {
+    text-transform: uppercase;
+    font-size: 7.4rem;
+    font-weight: 700;
+    color: $pink;
+    opacity: 0.18;
+  }
+  h1 {
+    color: $white;
+    padding-left: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-size: 500;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  a {
+    color: $white;
+    transition: all ease-in-out 0.2s;
+    &.active {
+      color: $pink;
+      border-bottom: 1px solid $pink;
+      pointer-events: none;
+    }
+    &:hover {
+      color: $pink;
+    }
+  }
+  .locationNav,
+  a,
+  span {
+    @include box-center($justify: flex-start);
+  }
+  a {
+    gap: 0.8rem;
+  }
+  span {
+    padding: 0 0.3rem;
+  }
+  .banner-img {
+    width: 23rem;
+    height: 24rem;
+    position: absolute;
+    right: 8rem;
+    bottom: -7.27rem;
+  }
+  .locationNav{
+    .link{
+      @include box-center();
+    }
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .banner{
+    .banner-img{
+      opacity: 0.7;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .banner{
+    .banner-img{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .banner{
+    h1 {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .banner{
+    padding-bottom: 1.5rem;
+    .locationNav{
+      justify-content: center;
+    }
+    .type{
+      font-size: 4.8rem;
+      opacity: 0.9;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .banner{
+    .locationNav{
+      display: none;
+    }
+    .type{
+      font-size: 3.5rem;
+    }
+  }
+}

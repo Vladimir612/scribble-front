@@ -1,0 +1,84 @@
+@import "../../../styles/mixins.scss";
+
+.value {
+  @include box-center($justify: space-between);
+  width: 100%;
+  gap: 3rem;
+  margin: 1rem 0;
+  &:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
+  .img-wrapper {
+    max-width: 100%;
+  }
+  .info {
+    width: 50%;
+    transform: translateY(3rem);
+    h3 {
+      color: $dark-blue;
+      font-size: 1.9rem;
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2.5rem;
+      .title {
+        z-index: 10;
+      }
+      .num {
+        position: absolute;
+        font-size: 7rem;
+        color: #ff529226;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-weight: 900;
+      }
+    }
+    li {
+      @include box-center($justify: flex-start);
+      gap: 1rem;
+      margin: 1.5rem 0;
+      color: $dark-blue;
+      span {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .value {
+    gap: 1rem;
+    .info {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .value {
+    flex-direction: column !important;
+    margin: 4rem 0 2rem 0;
+    .info {
+      width: 100%;
+      transform: initial;
+      @include box-center($direction: column);
+      ul {
+        @include box-center($direction: column, $align: flex-start);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        li {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .value {
+    .img-wrapper {
+      height: 18rem !important;
+    }
+  }
+}

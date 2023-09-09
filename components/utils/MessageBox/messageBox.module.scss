@@ -1,0 +1,60 @@
+@import "../../../styles/mixins.scss";
+
+.messageBox{
+    width: 100%;
+    height: calc(100% + 4rem);
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #0913d045;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+    .modal{
+        position: absolute;
+        z-index: 50;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        padding: 2rem 4rem;
+        background: $white;
+        border: 2px solid $pink;
+        @include box-center($direction: column);
+        gap: 2rem;
+        p{
+            color: $dark-blue;
+        }
+        .close{
+            border: none;
+            outline: none;
+            background: none;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            cursor: pointer;
+        }
+        .btnsWrapper{
+            @include box-center();
+            gap: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .messageBox{
+      .modal{
+        padding: 2rem 1rem;
+        p{
+            text-align: center;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .messageBox{
+      .modal{
+        width: 85%;
+      }
+    }
+  }
