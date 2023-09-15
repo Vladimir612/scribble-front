@@ -1,11 +1,16 @@
 @import "../../../../styles/mixins.scss";
 
 .userScreen{
-    margin-top: 4rem;
+    margin-top: 6rem;
     .title {
         font-size: 1.6rem;
         font-weight: 700;
         color: $dark-blue;
         margin-bottom: 2.5rem;
+    }
+    .cards{
+        @include box-center($justify: flex-start);
+        flex-wrap: wrap;
+        gap: 2rem;
     }
 }

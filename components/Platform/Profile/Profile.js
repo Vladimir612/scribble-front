@@ -16,7 +16,13 @@ const Profile = () => {
   const user = useUserStore((state) => state);
 
   useEffect(() => {
-    const token = localStorage.getItem("jwtToken");
+    const token = sessionStorage.getItem("jwtToken");
+
+    if (token === "undefined") {
+      sessionStorage.removeItem("jwtToken");
+      push("/login");
+      return;
+    }
 
     if (!token) {
       push("/login");

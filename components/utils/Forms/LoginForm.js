@@ -21,7 +21,12 @@ const LoginForm = () => {
   const { push } = useRouter();
 
   useEffect(() => {
-    const token = localStorage.getItem("jwtToken");
+    const token = sessionStorage.getItem("jwtToken");
+
+    if (token === "undefined") {
+      sessionStorage.removeItem("jwtToken");
+      return;
+    }
 
     if (token) {
       push("/app/profile");
@@ -45,7 +50,8 @@ const LoginForm = () => {
     try {
       setShowLoader(true);
       let result = await axios.post(url, requestBody);
-      localStorage.setItem("jwtToken", result.data);
+
+      sessionStorage.setItem("jwtToken", result.data);
       setShowLoader(false);
       setSuccess(true);
       setErrorMsg("");

@@ -1,0 +1,61 @@
+@import "../../../../styles/mixins.scss";
+
+.gameCard {
+    position: relative;
+    min-width: 22rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
+    &.light {
+      background: $gradient;
+      p,
+      li,
+      h2 {
+        color: $dark-blue;
+      }
+    }
+    .profilePhoto{
+        width: 2rem; 
+        height: 2rem; 
+        position: relative;
+        border: 2px solid $dark-blue;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        img{
+            object-fit: cover!important;
+        }
+      }
+      .initials{
+        width: 2rem; 
+        height: 2rem;
+        border: 2px solid $dark-blue;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        background: $gradient-border;
+        @include box-center();
+        span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $white;
+        }
+      }
+    h2{
+      width: calc(100% - 5rem);
+    }
+    .admin {
+      @include box-center($justify: flex-start);
+      gap: 1rem;
+      padding: 0.8rem 0;
+      margin-bottom: 1.5rem;
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    .bottom {
+      @include box-center($justify: space-between);
+      margin-top: 1rem;
+      gap: 2rem;
+      text-wrap: nowrap;
+    }
+  }
+  

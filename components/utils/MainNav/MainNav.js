@@ -36,7 +36,11 @@ const MainNav = () => {
       return;
     }
     try {
-      const token = localStorage.getItem("jwtToken");
+      const token = sessionStorage.getItem("jwtToken");
+      if (token === "undefined") {
+        sessionStorage.removeItem("jwtToken");
+        return;
+      }
       const decodedToken = jwtDecode(token);
 
       const userData = {
@@ -47,8 +51,6 @@ const MainNav = () => {
           decodedToken.profilePhoto !== ""
             ? `${process.env.NEXT_PUBLIC_BASE_URL}${decodedToken.profilePhoto}`
             : "",
-        github: decodedToken.github,
-        linkedIn: decodedToken.linkedin,
       };
       let arr = userData.fullName.split(" ");
       if (arr.length !== 2) {
@@ -64,7 +66,7 @@ const MainNav = () => {
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("jwtToken");
+    sessionStorage.removeItem("jwtToken");
 
     push("/login");
     resetUser();
@@ -74,7 +76,7 @@ const MainNav = () => {
     <nav className={styles["main-nav"] + " padding-global"}>
       <CustomImage
         path="/logo.svg"
-        customStyle={{ width: "10rem", height: "3rem" }}
+        customStyle={{ width: "14rem", height: "5rem" }}
         alt="HireClass logo"
       />
       <div className={`${styles.links} ${active && styles.active}`}>

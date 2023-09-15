@@ -16,14 +16,14 @@
     box-shadow: -8px 12px 25px rgba(255, 82, 146, 0.16);
     color: $white;
   }
-  &.disabled {
-    background: #b8b8b8;
-    cursor: initial;
-    pointer-events: none;
-  }
   &.blue {
     background: $blue;
     box-shadow: -8px 12px 25px 0px rgba(77, 108, 250, 0.15);
     color: $white;
+  }
+  &.disabled {
+    background: #b8b8b8;
+    cursor: initial;
+    pointer-events: none;
   }
 }

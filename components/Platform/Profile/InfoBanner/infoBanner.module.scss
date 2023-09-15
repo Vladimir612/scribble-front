@@ -4,6 +4,11 @@
     background: $dark-blue;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    .btnsWrapper{
+        @include box-center($justify: flex-start);
+        gap: 2rem;
+        margin-top: 2rem;
+    }
     .profileImgWrapper{
         position: relative;
         overflow: hidden;
@@ -77,6 +82,36 @@
     background: #0913d045;
     backdrop-filter: blur(10px);
     z-index: 50;
+    .input-group {
+        width: 100%;
+        label {
+          font-weight: 600;
+          color: $dark-blue;
+          margin-bottom: 0.5rem;
+          display: block;
+        }
+        input {
+          width: 100%;
+          outline: none;
+          padding: 0.4rem 0.6rem;
+          border: 2px solid $pink;
+          border-radius: 0.5rem;
+          color: $dark-blue;
+          &::placeholder {
+            color: transparentize($color: $dark-blue, $amount: 0.4);
+          }
+        }
+        input {
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus {
+            background: none;
+            -webkit-text-fill-color: $dark-blue;
+            box-shadow: 0 0 0px 1000px #fff inset;
+            transition: background-color 5000s ease-in-out 0s;
+          }
+        }
+      }
     .modal{
         position: absolute;
         z-index: 50;
@@ -89,6 +124,9 @@
         border: 2px solid $pink;
         @include box-center($direction: column);
         gap: 2rem;
+        &.modalJoin{
+            gap: 0;
+        }
         p{
             color: $dark-blue;
         }
@@ -106,8 +144,10 @@
             gap: 1rem;
             margin-top: 1rem;
         }
-        form{
+        .uploadForm, form{
             @include box-center($direction: column);
+        }
+        .uploadForm{
             label{
                 background: $blue;
                 color: $white;
@@ -115,6 +155,9 @@
                 padding: 0.5rem 2rem;
                 cursor: pointer;
             }
+        }
+        .loaderAndErr{
+            margin-top: 1rem;
         }
     }
     .profileImg{

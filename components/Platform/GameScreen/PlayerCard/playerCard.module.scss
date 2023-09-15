@@ -1,0 +1,58 @@
+@import "../../../../styles/mixins.scss";
+
+.playerCard {
+    padding: 0.8rem 0;
+    margin-bottom: 1.5rem;
+    width: max-content;
+    min-width: 16rem;
+    border-radius: 1rem;
+    border: 2px solid $pink;
+    background: linear-gradient(
+        55.7deg,
+        rgb(211, 219, 255) -4.49%,
+        rgb(255, 220, 233) 114.31%
+      );
+    .user{
+        @include box-center();
+        gap: 1rem;
+    }
+    h2 {
+      font-size: 1rem;
+      text-wrap: nowrap;
+    }
+    .score{
+        @include box-center();
+        color: $dark-blue;
+        margin-top: 0.3rem;
+        span{
+            padding-left: 0.5rem;
+            font-weight: 800;
+             font-size: 1.6rem
+        }
+    }
+    .profilePhoto{
+        width: 3rem; 
+        height: 3rem; 
+        position: relative;
+        border: 2px solid $dark-blue;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        img{
+            object-fit: cover!important;
+        }
+      }
+      .initials{
+        width: 3rem; 
+        height: 3rem;
+        border: 2px solid $dark-blue;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        background: $gradient-border;
+        @include box-center();
+        span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $white;
+        }
+      }
+  }

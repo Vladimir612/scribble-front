@@ -1,0 +1,13 @@
+@import "../../../../styles/mixins.scss";
+
+.chat{
+    background: linear-gradient(
+        55.7deg,
+        rgb(211, 219, 255) -4.49%,
+        rgb(255, 220, 233) 114.31%
+      );
+    border: 2px solid $pink;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}

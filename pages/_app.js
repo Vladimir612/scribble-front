@@ -5,14 +5,13 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo
-        title="HireClass"
-        description="We help you to become part of IT industry by providing free IT courses
-          made for your dream job."
+        title="InkedEnigma"
+        description=""
         openGraph={{
           type: "website",
           locale: "en_IE",
-          url: "https://www.hireclass.rs/",
-          siteName: "HireClass",
+          url: "",
+          siteName: "InkedEnigma",
         }}
         additionalLinkTags={[
           {
@@ -20,7 +19,7 @@ export default function MyApp({ Component, pageProps }) {
             href: "/favicon.ico",
           },
         ]}
-        keywords="courses, tutorials, IT, web, frontend, job, company"
+        keywords="draw, multiplayer, scribble"
       />
       <Component {...pageProps} />
     </>
