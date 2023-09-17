@@ -30,7 +30,7 @@ const Value = ({ number, title, img, imgDimensions, subValues }) => {
         path={img}
         customStyle={imgDimensions}
         className={styles["img-wrapper"]}
-        alt={`HireClass | ${title}`}
+        alt={`InkedEnigma | ${title}`}
       />
     </div>
   );

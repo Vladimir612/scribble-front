@@ -7,7 +7,56 @@
         rgb(255, 220, 233) 114.31%
       );
     border: 2px solid $pink;
-    border-radius: 1rem;
-    width: 100%;
+    border-top-right-radius: 1rem;
+          border-top-left-radius: 1rem;
     height: 100%;
+    width: 25rem;
+    position: relative;
+    .messages{
+      padding: 1rem;
+      @include box-center($direction: column, $justify: flex-start);
+      gap: 0.5rem;
+      height: calc(100% - 3.5rem);
+      overflow: scroll;
+      transition: scrollTop 0.3s ease-out;
+    }
+    .sendMsg{
+      position: absolute;
+      width: 100%;
+      height: 3rem;
+      bottom: 0.5rem;
+      @include box-center();
+      gap: 0.3rem;
+      cursor: pointer;
+      .sendIcon{
+        width: 2.5rem;
+        height: 3rem;
+        @include box-center;
+      }
+      .input-group {
+        height: 3rem;
+        width: calc(95% - 2.5rem);
+        input{
+          height: 100%;
+          width: 100%;
+          outline: none;
+          padding: 0.4rem 0.6rem;
+          border: 1px solid $dark-blue;
+          color: $dark-blue;
+          &::placeholder {
+            color: transparentize($color: $dark-blue, $amount: 0.4);
+          }
+        }
+        input {
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus {
+            background: none;
+            -webkit-text-fill-color: $dark-blue;
+            box-shadow: 0 0 0px 1000px #fff inset;
+            transition: background-color 5000s ease-in-out 0s;
+          }
+        }
+      }
+    }
 }

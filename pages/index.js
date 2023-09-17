@@ -4,7 +4,7 @@ import Landing from "./../components/Landing/index";
 export default function Home() {
   return (
     <>
-      <NextSeo title="HireClass | Home" />
+      <NextSeo title="InkedEnigma | Home" />
       <Landing />
     </>
   );

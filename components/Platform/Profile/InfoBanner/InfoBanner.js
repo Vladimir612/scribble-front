@@ -29,9 +29,6 @@ const InfoBanner = () => {
   const user = useUserStore((state) => state);
   const updateUser = useUserStore((state) => state.updateUser);
 
-  const [errorMsg, setErrorMsg] = useState("");
-  const [showLoader, setShowLoader] = useState(false);
-
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
@@ -119,39 +116,39 @@ const InfoBanner = () => {
     }
   };
 
-  const joinGame = async () => {
-    const token = sessionStorage.getItem("jwtToken");
+  // const joinGame = async () => {
+  //   const token = sessionStorage.getItem("jwtToken");
 
-    if (token === "undefined") {
-      sessionStorage.removeItem("jwtToken");
-      return;
-    }
+  //   if (token === "undefined") {
+  //     sessionStorage.removeItem("jwtToken");
+  //     return;
+  //   }
 
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   };
 
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}api/GameRoom/joinByCode?verificationCode=${code}`;
+  //   const url = `${process.env.NEXT_PUBLIC_BASE_URL}api/GameRoom/joinByCode?verificationCode=${code}`;
 
-    try {
-      setShowLoader(true);
-      let result = await axios.post(url, null, config);
+  //   try {
+  //     setShowLoader(true);
+  //     let result = await axios.post(url, null, config);
 
-      push(`/gameRooms/gameId=${result.data}`);
+  //     push(`/gameRooms/gameId=${result.data}`);
 
-      setSuccess(true);
-    } catch (err) {
-      setErrorMsg(err.response.data);
-      setSuccess(false);
-    }
-    setShowLoader(false);
-  };
+  //     setSuccess(true);
+  //   } catch (err) {
+  //     setErrorMsg(err.response.data);
+  //     setSuccess(false);
+  //   }
+  //   setShowLoader(false);
+  // };
 
   return (
     <>
-      {showMessageBoxJoin && (
+      {/* {showMessageBoxJoin && (
         <div className={styles.modalBg}>
           <div className={`${styles.modal} ${styles.modalJoin}`}>
             <>
@@ -211,7 +208,7 @@ const InfoBanner = () => {
             </>
           </div>
         </div>
-      )}
+      )} */}
       {showMessageBoxCreate && (
         <div className={styles.modalBg}>
           <div className={styles.modal}>
@@ -343,14 +340,14 @@ const InfoBanner = () => {
           >
             Create game
           </Button>
-          <Button
+          {/* <Button
             type="pink"
             cb={async () => {
               setShowMessageBoxJoin(true);
             }}
           >
             Join game
-          </Button>
+          </Button> */}
         </div>
       </div>
     </>

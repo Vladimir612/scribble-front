@@ -56,7 +56,7 @@ const RegisterForm = () => {
 
     setSubmitted(true);
 
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}api/Candidate/register`;
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}api/User/register`;
 
     const requestBody = {
       fullName: fullName,
@@ -92,12 +92,12 @@ const RegisterForm = () => {
       <CustomImage
         path="/heroImg2.svg"
         className={styles["img-wrapper-h-1"]}
-        alt="HireClass bg-logo small"
+        alt="InkedEnigma bg-logo small"
       />
       <CustomImage
         path="/heroImg3.svg"
         className={styles["img-wrapper-h-2"]}
-        alt="HireClass bg-logo large"
+        alt="InkedEnigma bg-logo large"
       />
       <form className={styles["register-form"]}>
         {successMsg !== "" ? (
@@ -105,10 +105,6 @@ const RegisterForm = () => {
         ) : (
           <>
             <h2>Register!</h2>
-            <p>
-              If you want to learn with us register now! We will make sure to
-              inform you on time about the release of our platform.
-            </p>
             <div className={styles["input-group"]}>
               <label htmlFor="fullName">
                 Full name <span style={{ color: "#ff5292" }}>*</span>

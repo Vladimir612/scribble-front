@@ -4,7 +4,7 @@ import RegisterForm from "../components/utils/Forms/RegisterForm";
 export default function Register() {
   return (
     <>
-      <NextSeo title="HireClass | Register" />
+      <NextSeo title="InkedEnigma | Register" />
       <RegisterForm />
     </>
   );

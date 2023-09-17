@@ -72,12 +72,12 @@ const LoginForm = () => {
       <CustomImage
         path="/heroImg2.svg"
         className={styles["img-wrapper-h-1"]}
-        alt="HireClass bg-logo small"
+        alt="InkedEnigma bg-logo small"
       />
       <CustomImage
         path="/heroImg3.svg"
         className={styles["img-wrapper-h-2"]}
-        alt="HireClass bg-logo large"
+        alt="InkedEnigma bg-logo large"
       />
       <form className={styles["register-form"]}>
         <h2>Login</h2>

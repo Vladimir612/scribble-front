@@ -1,0 +1,47 @@
+@import "../../../../../styles/mixins.scss";
+
+.message {
+    width: 95%;
+    border-radius: 1rem;
+    border: 2px solid $pink;
+    background: #fff;
+    @include box-center($justify: flex-start);
+    gap: 0.5rem;
+    padding: 0.75rem;
+    &.guessed-true{
+        background: #8fff82
+    }
+    .user{
+        @include box-center();
+        gap: 1rem;
+    }
+    h2 {
+      font-size: 1rem;
+      text-wrap: nowrap;
+    }
+    .profilePhoto{
+        width: 2rem; 
+        height: 2rem; 
+        position: relative;
+        border: 1px solid $dark-blue;
+        border-radius: 0.2rem;
+        overflow: hidden;
+        img{
+            object-fit: cover!important;
+        }
+      }
+      .initials{
+        width: 2rem; 
+        height: 2rem;
+        border: 1px solid $dark-blue;
+        border-radius: 0.2rem;
+        overflow: hidden;
+        background: $gradient-border;
+        @include box-center();
+        span {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: $white;
+        }
+      }
+  }

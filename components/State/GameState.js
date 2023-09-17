@@ -6,9 +6,10 @@ const useGameStore = create((set) => ({
   winner: {},
   code: "",
   finishedRounds: 0,
-  status: "",
+  status: 0,
   players: [],
   round: {},
+  messages: [],
   updateGame: (newGameData) => set(newGameData),
   resetGame: () =>
     set({
@@ -21,6 +22,7 @@ const useGameStore = create((set) => ({
       round: {},
     }),
   updatePlayers: (newPlayersData) => set({ players: newPlayersData }),
+  updateMessages: (newMessagesData) => set({ messages: newMessagesData }),
   updateRound: (newRoundData) => set({ round: newRoundData }),
 }));
 

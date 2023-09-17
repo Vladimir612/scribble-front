@@ -3,7 +3,7 @@
 .gameScreen{
     background: $dark-blue;
     min-height: 100vh;
-    .code{
+    .startGame{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -12,8 +12,12 @@
     }
     .topBar {
         position: relative;
-        padding-top: 2rem;
+        padding-top: 3rem;
         @include box-center($justify: space-between);
+    }
+    .finish{
+        @include box-center();
+        gap: 2rem
     }
     .timer{
         @include box-center();
@@ -27,9 +31,8 @@
     }
     .middleScreen {
         @include box-center();
-        width: 100%;
-        margin-top: 2rem;
-        gap: 10rem;
+        margin-top: 4rem;
+        gap: 5rem;
         height: 450px;
         canvas{
             background: #fff;
@@ -43,7 +46,6 @@
         margin-top: 2rem;
     }
 }
-
 .modalBg{
     width: 100%;
     height: calc(100% + 4rem);
@@ -53,6 +55,62 @@
     background: #0913d045;
     backdrop-filter: blur(10px);
     z-index: 50;
+    .winner{
+        padding: 0.8rem 0;
+        margin-bottom: 1.5rem;
+        width: max-content;
+        min-width: 16rem;
+        border-radius: 1rem;
+        border: 2px solid $pink;
+        background: linear-gradient(
+            55.7deg,
+            rgb(211, 219, 255) -4.49%,
+            rgb(255, 220, 233) 114.31%
+            );
+        .user{
+            @include box-center();
+            gap: 1rem;
+        }
+        h2 {
+            font-size: 1rem;
+            text-wrap: nowrap;
+        }
+        .score{
+            @include box-center();
+            color: $dark-blue;
+            margin-top: 0.3rem;
+            span{
+                padding-left: 0.5rem;
+                font-weight: 800;
+                    font-size: 1.6rem
+            }
+        }
+        .profilePhoto{
+            width: 3rem; 
+            height: 3rem; 
+            position: relative;
+            border: 2px solid $dark-blue;
+            border-radius: 0.4rem;
+            overflow: hidden;
+            img{
+                object-fit: cover!important;
+            }
+            }
+            .initials{
+            width: 3rem; 
+            height: 3rem;
+            border: 2px solid $dark-blue;
+            border-radius: 0.4rem;
+            overflow: hidden;
+            background: $gradient-border;
+            @include box-center();
+            span {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $white;
+            }
+        }
+    }
     .input-group {
         width: 100%;
         label {

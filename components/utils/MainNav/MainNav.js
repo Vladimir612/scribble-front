@@ -77,7 +77,7 @@ const MainNav = () => {
       <CustomImage
         path="/logo.svg"
         customStyle={{ width: "14rem", height: "5rem" }}
-        alt="HireClass logo"
+        alt="InkedEnigma logo"
       />
       <div className={`${styles.links} ${active && styles.active}`}>
         <ul className={styles.pages}>
